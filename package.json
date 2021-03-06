@@ -1,0 +1,93 @@
+{
+  "name": "jest-parser",
+  "description": "parses jest files into an object",
+  "keywords": [
+    "jest",
+    "syntax",
+    "parser"
+  ],
+  "author": "Martin Rafael Gonzalez <tin@devtin.io>",
+  "version": "1.0.0",
+  "main": "dist/jest-parser.js",
+  "module": "dist/jest-parser.mjs",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/devtin/jest-parser"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "build:live": "nodemon -w src --exec yarn build",
+    "lint": "eslint --ext .js --ignore-path .gitignore src/",
+    "test": "NODE_ENV=test jest",
+    "release": "standard-version -a"
+  },
+  "files": [
+    "dist/*",
+    "src/*"
+  ],
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.21.0",
+    "eslint-plugin-jest": "^24.1.5",
+    "jest": "^26.6.3",
+    "jest-esm-transformer": "^1.0.0",
+    "nodemon": "^2.0.7",
+    "nyc": "^15.1.0",
+    "rollup": "^2.40.0",
+    "standard-version": "^9.1.1"
+  },
+  "eslintConfig": {
+    "extends": ["eslint:recommended", "plugin:jest/recommended"],
+    "parser": "babel-eslint",
+    "env": {
+      "es6": true,
+      "node": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 2018,
+      "sourceType": "module"
+    },
+    "plugins": ["jest"]
+  },
+  "standard-version": {
+    "scripts": {
+      "prerelease": "npm run lint && npm run build && npm run test",
+      "precommit": "npm run --silent build > /dev/null 2>&1 && git add ."
+    },
+    "types": [
+      {
+        "type": "feat",
+        "section": "Features"
+      },
+      {
+        "type": "fix",
+        "section": "Bug Fixes"
+      },
+      {
+        "type": "chore",
+        "section": "Chore"
+      },
+      {
+        "type": "docs",
+        "section": "Docs"
+      },
+      {
+        "type": "refactor",
+        "section": "Refactor"
+      },
+      {
+        "type": "style",
+        "hidden": true
+      },
+      {
+        "type": "perf",
+        "hidden": true
+      },
+      {
+        "type": "test",
+        "section": "Tests"
+      }
+    ]
+  }
+}

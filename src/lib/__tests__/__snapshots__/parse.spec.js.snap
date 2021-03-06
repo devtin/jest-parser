@@ -1,0 +1,128 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getFnBlockedContent() retrieves metadata about a particular set of describe functions 1`] = `
+Object {
+  "describe": Array [
+    Object {
+      "code": "// some code 1
+describe('Nested describe 1', () => {
+    it('does this and that', () => {
+        // code of what it does
+        expect(true).toBeTruthy()
+    })
+})",
+      "describe": Array [
+        Object {
+          "code": "it('does this and that', () => {
+    // code of what it does
+    expect(true).toBeTruthy()
+})",
+          "describe": Array [],
+          "end": 6,
+          "it": Array [
+            Object {
+              "code": "// code of what it does
+expect(true).toBeTruthy()",
+              "describe": Array [],
+              "end": 3,
+              "it": Array [],
+              "start": 0,
+              "title": "does this and that",
+            },
+          ],
+          "start": 1,
+          "title": "Nested describe 1",
+        },
+      ],
+      "end": 8,
+      "it": Array [],
+      "start": 0,
+      "title": "Some describe title 1",
+    },
+    Object {
+      "code": "// some code 2",
+      "describe": Array [],
+      "end": 12,
+      "it": Array [],
+      "start": 10,
+      "title": "Some describe title 2",
+    },
+    Object {
+      "code": "// some code 3",
+      "describe": Array [],
+      "end": 16,
+      "it": Array [],
+      "start": 14,
+      "title": "Some describe title 3",
+    },
+  ],
+  "it": Array [],
+}
+`;
+
+exports[`parse() retrieves metadata about a jest source 1`] = `
+Object {
+  "describe": Array [
+    Object {
+      "code": "// some code 1
+describe('Nested describe 1', () => {
+    it('does this and that', () => {
+        // code of what it does
+        expect(true).toBeTruthy()
+    })
+})",
+      "describe": Array [
+        Object {
+          "code": "it('does this and that', () => {
+    // code of what it does
+    expect(true).toBeTruthy()
+})",
+          "describe": Array [],
+          "end": 6,
+          "it": Array [
+            Object {
+              "code": "// code of what it does
+expect(true).toBeTruthy()",
+              "describe": Array [],
+              "end": 3,
+              "it": Array [],
+              "start": 0,
+              "test": Array [],
+              "title": "does this and that",
+            },
+          ],
+          "start": 1,
+          "test": Array [],
+          "title": "Nested describe 1",
+        },
+      ],
+      "end": 8,
+      "it": Array [],
+      "start": 0,
+      "test": Array [],
+      "title": "Some describe title 1",
+    },
+    Object {
+      "code": "// some code 2",
+      "describe": Array [],
+      "end": 12,
+      "it": Array [],
+      "start": 10,
+      "test": Array [],
+      "title": "Some describe title 2",
+    },
+    Object {
+      "code": "// some code 3",
+      "describe": Array [],
+      "end": 16,
+      "it": Array [],
+      "start": 14,
+      "test": Array [],
+      "title": "Some describe title 3",
+    },
+  ],
+  "it": Array [],
+  "test": Array [],
+  "title": "Some jest file",
+}
+`;
