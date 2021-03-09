@@ -7,7 +7,7 @@
     "parser"
   ],
   "author": "Martin Rafael Gonzalez <tin@devtin.io>",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "dist/jest-parser.js",
   "module": "dist/jest-parser.mjs",
   "license": "MIT",
@@ -38,7 +38,10 @@
     "standard-version": "^9.1.1"
   },
   "eslintConfig": {
-    "extends": ["eslint:recommended", "plugin:jest/recommended"],
+    "extends": [
+      "eslint:recommended",
+      "plugin:jest/recommended"
+    ],
     "parser": "babel-eslint",
     "env": {
       "es6": true,
@@ -48,7 +51,9 @@
       "ecmaVersion": 2018,
       "sourceType": "module"
     },
-    "plugins": ["jest"]
+    "plugins": [
+      "jest"
+    ]
   },
   "standard-version": {
     "scripts": {

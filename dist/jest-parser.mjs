@@ -1,5 +1,5 @@
 /*!
- * jest-parser v1.0.0
+ * jest-parser v1.1.0
  * (c) 2021-2021 Martin Rafael Gonzalez <tin@devtin.io>
  * MIT
  */
@@ -53,7 +53,7 @@ const unIndentString = (str) => {
 };
 
 const getCodeBlockPattern = (fnName) => {
-    return new RegExp(`^${fnName}\\((["'\`])(.*?)\\1[^{]*{[\\n](.*?)[\\n]}\\)`, 'gims')
+    return new RegExp(`^${fnName}(?:\\.([a-z]+))?\\((["'\`])(.*?)\\2[^{]*{[\\n](.*?)[\\n]}\\)`, 'gims')
 };
 
 const getFnBlockedContent = (source, fnNames = []) => {
@@ -69,7 +69,7 @@ const getFnBlockedContent = (source, fnNames = []) => {
         const pattern = getCodeBlockPattern(fnName);
         let result;
         while ((result = pattern.exec(source))) {
-            const [matchedRaw, , title, rawCode = ''] = result;
+            const [matchedRaw, flag, , title, rawCode = ''] = result;
             const code = unIndentString(rawCode);
             const matchedRawLines = matchedRaw.split(/\n/g);
             const start = findLineNumber(matchedRawLines[0]);
@@ -80,6 +80,7 @@ const getFnBlockedContent = (source, fnNames = []) => {
                 code,
                 start,
                 end,
+                flag,
                 ...getFnBlockedContent(code, fnNames)
             });
         }
