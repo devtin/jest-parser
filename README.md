@@ -124,4 +124,4 @@ would produce the following output:
 
 [MIT](https://opensource.org/licenses/MIT)
 
-&copy; 2020-present Martin Rafael Gonzalez <tin@devtin.io>
+&copy; 2021-present Martin Rafael Gonzalez <tin@devtin.io>
