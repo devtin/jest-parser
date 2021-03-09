@@ -48,7 +48,7 @@ export const unIndentString = (str) => {
 }
 
 export const getCodeBlockPattern = (fnName) => {
-    return new RegExp(`^${fnName}\\((["'\`])(.*?)\\1[^{]*{[\\n](.*?)[\\n]}\\)`, 'gims')
+    return new RegExp(`^${fnName}(?:\\.([a-z]+))?\\((["'\`])(.*?)\\2[^{]*{[\\n](.*?)[\\n]}\\)`, 'gims')
 }
 
 export const getFnBlockedContent = (source, fnNames = []) => {
@@ -64,7 +64,7 @@ export const getFnBlockedContent = (source, fnNames = []) => {
         const pattern = getCodeBlockPattern(fnName)
         let result
         while ((result = pattern.exec(source))) {
-            const [matchedRaw, , title, rawCode = ''] = result
+            const [matchedRaw, flag, , title, rawCode = ''] = result
             const code = unIndentString(rawCode)
             const matchedRawLines = matchedRaw.split(/\n/g)
             const start = findLineNumber(matchedRawLines[0])
@@ -75,6 +75,7 @@ export const getFnBlockedContent = (source, fnNames = []) => {
                 code,
                 start,
                 end,
+                flag,
                 ...getFnBlockedContent(code, fnNames)
             })
         }

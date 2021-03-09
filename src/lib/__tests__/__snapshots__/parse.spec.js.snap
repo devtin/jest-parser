@@ -5,7 +5,8 @@ Object {
   "describe": Array [
     Object {
       "code": "// some code 1
-describe('Nested describe 1', () => {
+/* eslint-disable-next-line */
+describe.only('Nested describe 1', () => {
     it('does this and that', () => {
         // code of what it does
         expect(true).toBeTruthy()
@@ -18,23 +19,26 @@ describe('Nested describe 1', () => {
     expect(true).toBeTruthy()
 })",
           "describe": Array [],
-          "end": 6,
+          "end": 7,
+          "flag": "only",
           "it": Array [
             Object {
               "code": "// code of what it does
 expect(true).toBeTruthy()",
               "describe": Array [],
               "end": 3,
+              "flag": undefined,
               "it": Array [],
               "start": 0,
               "title": "does this and that",
             },
           ],
-          "start": 1,
+          "start": 2,
           "title": "Nested describe 1",
         },
       ],
-      "end": 8,
+      "end": 9,
+      "flag": undefined,
       "it": Array [],
       "start": 0,
       "title": "Some describe title 1",
@@ -42,17 +46,19 @@ expect(true).toBeTruthy()",
     Object {
       "code": "// some code 2",
       "describe": Array [],
-      "end": 12,
+      "end": 13,
+      "flag": undefined,
       "it": Array [],
-      "start": 10,
+      "start": 11,
       "title": "Some describe title 2",
     },
     Object {
       "code": "// some code 3",
       "describe": Array [],
-      "end": 16,
+      "end": 17,
+      "flag": undefined,
       "it": Array [],
-      "start": 14,
+      "start": 15,
       "title": "Some describe title 3",
     },
   ],
@@ -65,7 +71,8 @@ Object {
   "describe": Array [
     Object {
       "code": "// some code 1
-describe('Nested describe 1', () => {
+/* eslint-disable-next-line */
+describe.only('Nested describe 1', () => {
     it('does this and that', () => {
         // code of what it does
         expect(true).toBeTruthy()
@@ -78,25 +85,28 @@ describe('Nested describe 1', () => {
     expect(true).toBeTruthy()
 })",
           "describe": Array [],
-          "end": 6,
+          "end": 7,
+          "flag": "only",
           "it": Array [
             Object {
               "code": "// code of what it does
 expect(true).toBeTruthy()",
               "describe": Array [],
               "end": 3,
+              "flag": undefined,
               "it": Array [],
               "start": 0,
               "test": Array [],
               "title": "does this and that",
             },
           ],
-          "start": 1,
+          "start": 2,
           "test": Array [],
           "title": "Nested describe 1",
         },
       ],
-      "end": 8,
+      "end": 9,
+      "flag": undefined,
       "it": Array [],
       "start": 0,
       "test": Array [],
@@ -105,18 +115,20 @@ expect(true).toBeTruthy()",
     Object {
       "code": "// some code 2",
       "describe": Array [],
-      "end": 12,
+      "end": 13,
+      "flag": undefined,
       "it": Array [],
-      "start": 10,
+      "start": 11,
       "test": Array [],
       "title": "Some describe title 2",
     },
     Object {
       "code": "// some code 3",
       "describe": Array [],
-      "end": 16,
+      "end": 17,
+      "flag": undefined,
       "it": Array [],
-      "start": 14,
+      "start": 15,
       "test": Array [],
       "title": "Some describe title 3",
     },

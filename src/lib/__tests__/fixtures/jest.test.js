@@ -1,6 +1,7 @@
 describe('Some describe title 1', () => {
     // some code 1
-    describe('Nested describe 1', () => {
+    /* eslint-disable-next-line */
+    describe.only('Nested describe 1', () => {
         it('does this and that', () => {
             // code of what it does
             expect(true).toBeTruthy()
