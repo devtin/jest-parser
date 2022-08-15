@@ -16,3 +16,6 @@ describe('Some describe title 2', () => {
 describe('Some describe title 3', () => {
     // some code 3
 })
+
+it('one line implicit-return arrow function', () => Promise.resolve(true))
+it('one line explicit-return arrow function', () => { Promise.resolve(true) })
