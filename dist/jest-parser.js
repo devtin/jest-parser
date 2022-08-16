@@ -1,6 +1,6 @@
 /*!
  * jest-parser v1.1.0
- * (c) 2021-2021 Martin Rafael Gonzalez <tin@devtin.io>
+ * (c) 2021-2022 Martin Rafael Gonzalez <tin@devtin.io>
  * MIT
  */
 'use strict';
@@ -57,7 +57,11 @@ const unIndentString = (str) => {
 };
 
 const getCodeBlockPattern = (fnName) => {
-    return new RegExp(`^${fnName}(?:\\.([a-z]+))?\\((["'\`])(.*?)\\2[^{]*{[\\n](.*?)[\\n]}\\)`, 'gims')
+    if (fnName === 'it') {
+        return new RegExp(`^${fnName}(?:\\.([a-z]+))?\\((["'\`])(.*?)\\2`, 'gims')
+    } else {
+        return new RegExp(`^${fnName}(?:\\.([a-z]+))?\\((["'\`])(.*?)\\2[^{]*{[\\n](.*?)[\\n]}\\)`, 'gims')
+    }
 };
 
 const getFnBlockedContent = (source, fnNames = []) => {
