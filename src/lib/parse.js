@@ -48,7 +48,11 @@ export const unIndentString = (str) => {
 }
 
 export const getCodeBlockPattern = (fnName) => {
-    return new RegExp(`^${fnName}(?:\\.([a-z]+))?\\((["'\`])(.*?)\\2[^{]*{[\\n](.*?)[\\n]}\\)`, 'gims')
+    if (fnName === 'it') {
+        return new RegExp(`^${fnName}(?:\\.([a-z]+))?\\((["'\`])(.*?)\\2`, 'gims')
+    } else {
+        return new RegExp(`^${fnName}(?:\\.([a-z]+))?\\((["'\`])(.*?)\\2[^{]*{[\\n](.*?)[\\n]}\\)`, 'gims')
+    }
 }
 
 export const getFnBlockedContent = (source, fnNames = []) => {
