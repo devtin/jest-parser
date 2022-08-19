@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.1](https://github.com/devtin/jest-parser/compare/v1.1.0...v1.1.1) (2022-08-19)
+
+
+### Docs
+
+* add regex disclaimer ([d3504c9](https://github.com/devtin/jest-parser/commit/d3504c9f1efcdae8951bcc6f73d4beee2ba6f752))
+
 ## [1.1.0](https://github.com/devtin/jest-parser/compare/v1.0.0...v1.1.0) (2021-03-09)
 
 

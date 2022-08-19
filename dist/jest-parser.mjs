@@ -1,6 +1,6 @@
 /*!
- * jest-parser v1.1.0
- * (c) 2021-2021 Martin Rafael Gonzalez <tin@devtin.io>
+ * jest-parser v1.1.1
+ * (c) 2021-2022 Martin Rafael Gonzalez <tin@devtin.io>
  * MIT
  */
 /**
