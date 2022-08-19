@@ -1,6 +1,6 @@
 {
   "name": "jest-parser",
-  "description": "parses jest files into an object",
+  "description": "regexp-base library that parses jest files into an object",
   "keywords": [
     "jest",
     "syntax",
@@ -24,6 +24,7 @@
   },
   "files": [
     "dist/*",
+    "CHANGELOG.md",
     "src/*"
   ],
   "devDependencies": {
